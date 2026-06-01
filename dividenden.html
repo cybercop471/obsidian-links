@@ -3,11 +3,53 @@
 <head>
   <meta charset="utf-8">
   <title>Dividenden-Reinvestition</title>
-  <meta http-equiv="refresh" content="0; url=obsidian://open?vault=Documents&file=04%20Ressourcen%2FVorlagen%2FDividenden-Reinvestition%20Monatsformular">
 </head>
 <body>
-  <p>Obsidian wird geöffnet…<br>
-  <a href="obsidian://open?vault=Documents&file=04%20Ressourcen%2FVorlagen%2FDividenden-Reinvestition%20Monatsformular">
-  Falls nichts passiert → hier klicken</a></p>
+<p>Obsidian wird geöffnet und eine neue Notiz erstellt…<br>
+<span id="link"></span></p>
+<script>
+  var now = new Date();
+  var y = now.getFullYear();
+  var m = String(now.getMonth() + 1).padStart(2, '0');
+  var d = String(now.getDate()).padStart(2, '0');
+  var monate = ['Januar','Februar','März','April','Mai','Juni',
+                'Juli','August','September','Oktober','November','Dezember'];
+  var monatsname = monate[now.getMonth()] + ' ' + y;
+  var notizName = y + '-' + m + '-' + d + ' Dividenden-Reinvestition';
+
+  var inhalt = '---\ntags:\n  - finanzen\n  - dividenden\n  - reinvestition\ndatum: '
+    + y+'-'+m+'-'+d + '\nmonat: ' + monatsname
+    + '\n---\n\n# Dividenden-Reinvestition \u2013 ' + monatsname
+    + '\n\n---\n\n## Schritt 1 \u2013 Ertr\u00e4ge eintragen\n\n'
+    + 'Trade Republic App \u2192 Cashkonto \u2192 Kontoauszug\n\n'
+    + '| Quelle / Bezeichnung | Betrag |\n|---|---:|\n'
+    + '|  | \u20ac |\n|  | \u20ac |\n|  | \u20ac |\n|  | \u20ac |\n|  | \u20ac |\n'
+    + '|  | \u20ac |\n|  | \u20ac |\n|  | \u20ac |\n|  | \u20ac |\n|  | \u20ac |\n\n'
+    + '*(Nicht ben\u00f6tigte Zeilen leer lassen)*\n\n---\n\n'
+    + '## Schritt 2 \u2013 ETF-Depotwerte ablesen\n\n'
+    + 'Trade Republic App \u2192 Portfolio \u2192 ETF antippen \u2192 Depotwert (nicht Kurs!)\n\n'
+    + '| ETF | ISIN | Depotwert aktuell |\n|---|---|---:|\n'
+    + '| iShares Core Euro Dividend (Dist) | IE00B0M62S72 | \u20ac |\n'
+    + '| Vanguard FTSE All-World High Div Yield (Dist) | IE00B8GKDB10 | \u20ac |\n'
+    + '| JPM USD EM Bond EUR Hedged (Dist) | IE00B9M6RS56 | \u20ac |\n'
+    + '| SPDR S&P Global Dividend Aristocrats (Dist) | IE00B9CQXS71 | \u20ac |\n\n'
+    + '---\n\n## Schritt 3 \u2013 An Claudian schicken\n\n'
+    + 'Tabellen oben ausf\u00fcllen und an Claudian senden.\n\n---\n\n'
+    + '## Zielgewichtung\n\n'
+    + '| ETF | Zielgewicht |\n|---|:---:|\n'
+    + '| iShares Core Euro Dividend | 28 % |\n'
+    + '| Vanguard FTSE All-World High Div Yield | 25 % |\n'
+    + '| JPM USD EM Bond EUR Hedged | 18 % |\n'
+    + '| SPDR S&P Global Dividend Aristocrats | 14 % |\n';
+
+  var uri = 'obsidian://new?vault=Documents&name='
+    + encodeURIComponent(notizName)
+    + '&content=' + encodeURIComponent(inhalt);
+
+  document.getElementById('link').innerHTML =
+    '<a href="' + uri + '">Falls nichts passiert \u2192 hier klicken</a>';
+
+  window.location.href = uri;
+</script>
 </body>
 </html>
