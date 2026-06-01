@@ -15,7 +15,7 @@
   var monate = ['Januar','Februar','März','April','Mai','Juni',
                 'Juli','August','September','Oktober','November','Dezember'];
   var mn = monate[now.getMonth()] + ' ' + y;
-  var name = y+'-'+m+'-'+d+' Dividenden-Reinvestition';
+  var path = '03 Bereiche/Finanzen/Trade Republic/'+y+'-'+m+'-'+d+' Dividenden-Reinvestition';
   var inhalt = '# Dividenden-Reinvestition \u2013 '+mn+'\n\n'
     +'## Ertr\u00e4ge\n\n'
     +'| Quelle | Betrag |\n|---|---:|\n'
@@ -27,8 +27,8 @@
     +'| Vanguard FTSE All-World High Div Yield | IE00B8GKDB10 | \u20ac |\n'
     +'| JPM USD EM Bond EUR Hedged | IE00B9M6RS56 | \u20ac |\n'
     +'| SPDR S&P Global Dividend Aristocrats | IE00B9CQXS71 | \u20ac |\n';
-  var uri = 'obsidian://new?vault=Documents&name='
-    +encodeURIComponent(name)+'&content='+encodeURIComponent(inhalt);
+  var uri = 'obsidian://new?vault=Documents&path='
+    +encodeURIComponent(path)+'&content='+encodeURIComponent(inhalt);
   document.getElementById('link').innerHTML =
     '<a href="'+uri+'">Falls nichts passiert \u2192 hier klicken</a>';
   window.location.href = uri;
